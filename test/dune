@@ -1,6 +1,10 @@
-(library
-    (name test)
-    (libraries base stdio lib)
-    (inline_tests)
-    (preprocess (pps ppx_expect))
+(executables
+    (names test)
+    (libraries alcotest lib)
+)
+
+(alias
+  (name runtest)
+  (deps test.exe)
+  (action (run %{deps} -q --color=always))
 )
