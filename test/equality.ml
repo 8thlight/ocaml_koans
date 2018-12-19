@@ -20,6 +20,9 @@ let comparing_floats_may_not () =
   Alcotest.(check bool) "Not equal" __ (1 <> 0);
   Alcotest.(check bool) "Not identical" __ (1 != 0)
 
+let simple_string_comparison () =
+  Alcotest.(check bool) "Equal" __ ("foo" = "foo")
+
 (* Add enums, strings, and what is nil *)
 (* And operators *)
 
@@ -28,6 +31,7 @@ let equality_set = [
   "Check Identity", `Quick, identity_test;
   "Compare Integers", `Quick, comparing_integers;
   "Compare Floats", `Quick, comparing_floats_may_not;
+  "Compare Strings", `Quick, simple_string_comparison;
 ]
 
 let () =
