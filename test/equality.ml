@@ -29,6 +29,3 @@ let equality_set = [
   "Compare Integers", `Quick, comparing_integers;
   "Compare Floats", `Quick, comparing_floats_may_not;
 ]
-
-let () =
-  Alcotest.run "Equality" ["equality_set", equality_set]

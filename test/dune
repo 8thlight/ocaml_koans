@@ -1,10 +1,10 @@
-(executables
-    (names equality)
+(executable
+    (name koans)
     (libraries alcotest)
 )
 
 (alias
   (name runtest)
-  (deps equality.exe)
+  (deps koans.exe)
   (action (run %{deps} -q --color=always))
-)
+  )
