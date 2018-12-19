@@ -6,7 +6,7 @@ This assumes you installed OCaml like a good egg, you can start by using opam to
 
 ```bash
 cd ocaml-koans
-opam switch create . 4.07.`
+opam switch create . 4.06.1
 ```
 When you enter the directory now you don't have bindings for any tools like utop, even if you installed them globally. So install them now:
 

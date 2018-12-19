@@ -26,9 +26,6 @@ let comparing_strings () =
   Alcotest.(check bool) "Not Equal" __ ("foo" <> "boo");
   Alcotest.(check bool) "Not Identical" __ ("foo" != "foo")
 
-(* Add enums, and what is nil *)
-(* And operators *)
-
 let equality_set = [
   "Check Basic Equality", `Quick, basic_equality_test;
   "Check Identity", `Quick, identity_test;
