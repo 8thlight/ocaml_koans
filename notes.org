@@ -3,3 +3,4 @@
 * What are operations you can do on a string?
 + Can you concat? Replace? Index
 + String.make - for instance
++ String interpolation
