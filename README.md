@@ -11,7 +11,7 @@ opam switch create . 4.06.1
 When you enter the directory now you don't have bindings for any tools like utop, even if you installed them globally. So install them now:
 
 ```bash
-opam install utop merlin alcotest ocp-indent dune
+opam install utop merlin alcotest ocp-indent dune base
 ```
 
 Technically you only need `alcotest` to make this run, but the other libraries are useful for editor integration and a nice REPL.
