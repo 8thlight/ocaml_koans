@@ -1,0 +1,5 @@
+* Don't forget to check in the 'quiz' version
+* Don't just be concerned with compare
+* What are operations you can do on a string?
++ Can you concat? Replace? Index
++ String.make - for instance
