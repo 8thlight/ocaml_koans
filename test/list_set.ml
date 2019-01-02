@@ -15,10 +15,11 @@ let get_int_value_at arr indx =
 
 
 let identity_test () =
-  Alcotest.(check bool) "Lists have the same identity" __ (
-    (* In OCaml Base, comparitors (=, ==, !=, etc) only work for integers *)
-    phys_equal [] []
-  )
+  Alcotest.(check bool) "Lists have the same identity" __
+    (
+      (* In OCaml Base, comparitors (=, ==, !=, etc) only work for integers *)
+      phys_equal [] []
+    )
 
 let appending_to_list () =
   Alcotest.(check string) "First Element" "foo"
@@ -38,9 +39,10 @@ let appending_to_list () =
     )
 
 let length_of_list () =
-  Alcotest.(check int) "Length Should Be 0" ___ (
-    List.length []
-  )
+  Alcotest.(check int) "Length Should Be 0" ___
+    (
+      List.length []
+    )
 
 let map_filter_reduce () =
   Alcotest.(check bool) "Mapping over an empty list" true
