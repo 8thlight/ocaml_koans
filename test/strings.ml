@@ -1,35 +1,36 @@
-let __ = "boo"
-let ___ = ""
+let __ = false
+let ___ = "boo"
+let ____ = ""
+let _____ = ' '
+let ______ = 2
 
 let comparing_strings () =
-  Alcotest.(check bool) "Equal" true ("boo" = "boo");
+  Alcotest.(check bool) "Equal" true (____ = "boo");
   Alcotest.(check bool) "Equal" false (___ = "boo");
-  Alcotest.(check bool) "Identical" false ("boo" == "boo");
-  Alcotest.(check bool) "Not Equal" true ("foo" <> "boo");
+  Alcotest.(check bool) "Identical" __ ("boo" == "boo");
+  Alcotest.(check bool) "Not Equal" true (___ <> "boo");
   Alcotest.(check bool) "Not Identical" true ("foo" != "foo")
 
 let comparing_multiline_strings () =
-  Alcotest.(check @@ neg string) "Diff strings with newline not equal" "boo\nfoo" "boo\nboo";
-  Alcotest.(check string) "String with newline equal" "boo\nboo" "boo\nboo";
-  Alcotest.(check @@ neg string) "Diff strings with diff newline Not Equal" "boo\nfoo" "boo\n\nboo";
-  Alcotest.(check @@ neg string) "String with diff newline not equal" "boo\nboo" "boo\n\nboo"
+  Alcotest.(check @@ neg string) "Diff strings with newline not equal" "boo\nboo" "boo\nboo";
+  Alcotest.(check string) "String with newline equal" "boo\nfoo" "boo\nboo";
+  Alcotest.(check @@ neg string) "Diff strings with diff newline Not Equal" "boo\n\nboo" "boo\n\nboo"
 
 let comparing_empty_strings () =
   Alcotest.(check string) "Equal" ___ "";
-  Alcotest.(check string) "Equal Strings" __ "boo";
-  Alcotest.(check @@ neg string) "Not Equal Stings" __ "foo";
-  Alcotest.(check @@ neg string) "Empty string not equal to empty string with space" ___ " ";
+  Alcotest.(check string) "Equal Strings" ____ "boo";
+  Alcotest.(check @@ neg string) "Not Equal Stings" ___ "foo";
   Alcotest.(check @@ neg string) "Empty string not equal to empty string with space" ___ " "
 
 let comparing_char () =
-  Alcotest.(check @@ neg char) "Chars not equal" 'a' 'A';
-  Alcotest.(check char) "Chars equal" 'B' 'B';
-  Alcotest.(check char) "Specia chars equal" '@' '@';
-  Alcotest.(check @@ neg char) "Chars not equal" '*' '?';
-  Alcotest.(check char) "Chars with space equal" ' ' ' '
+  Alcotest.(check @@ neg char) "Chars not equal" _____ 'A';
+  Alcotest.(check char) "Chars equal" _____ 'B';
+  Alcotest.(check char) "Special chars equal" _____ '@';
+  Alcotest.(check @@ neg char) "Chars not equal" _____ '?';
+  Alcotest.(check char) "Chars with space equal" _____ ' '
 
 let comparing_char_vs_string () =
-  Alcotest.(check string) "Char converted to string" "a" (String.make 1 'a')
+  Alcotest.(check string) "Char converted to string" "a" (String.make ______ 'a')
 
 let strings_set = [
   "Compare Strings", `Quick, comparing_strings;
