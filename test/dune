@@ -1,10 +1,10 @@
 (executable
     (name koans)
-    (libraries alcotest)
+    (libraries alcotest base)
 )
 
 (alias
   (name runtest)
   (deps koans.exe)
   (action (run %{deps} -q --color=always))
-  )
+)
